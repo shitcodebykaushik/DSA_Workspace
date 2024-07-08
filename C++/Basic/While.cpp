@@ -5,6 +5,6 @@ int main () {
     int b =45;
     int c = 349;
     while (b>c) {
-        cout <<"The value is ok "<<endl;
+      std::cout <<"The value is ok "<<endl;
     }
 }
