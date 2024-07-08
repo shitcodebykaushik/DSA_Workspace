@@ -1,0 +1,3 @@
+- g++ filename_cpp This is the build command for the code 
+- Exe file name is the running command `.\a.exe` .
+- Conditional statement can be use to make the code reliable to run the code after checking the conditions .
