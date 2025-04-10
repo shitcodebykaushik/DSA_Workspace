@@ -5,9 +5,10 @@ int main () {
     int n ,x(0);
     cin>>n;
     string s;
-    cin>>s;
+   
     while(n--){
-        if(s[1]=='+'){
+        cin>>s;
+        if(s[1]=='+'){    // Key point of learning 
             ++x;
         }else {
             --x;
