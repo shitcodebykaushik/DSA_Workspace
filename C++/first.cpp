@@ -1,18 +1,10 @@
-#include <iostream>
-#include <string>
-using namespace std ;
+#include <bits/stdc++.h>
+using namespace std;
+
 int main () {
-    int n ,x(0);
-    cin>>n;
-    string s;
-    cin>>s;
-    while(n--){
-        if(s[1]=='+'){
-            ++x;
-        }else {
-            --x;
-        }
-    }
-    cout<<x<<endl;
+    int n, m;
+    cin >> n >> m;
+    cout  << n << " HELLO " << m << endl;
+
     return 0;
 }
