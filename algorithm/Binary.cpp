@@ -20,6 +20,7 @@ while (low<=high){
 
 return -1;
 }
+// Key points to remember , the entire binary operation work on the divide and conquer features .
 
 
 int main () {
