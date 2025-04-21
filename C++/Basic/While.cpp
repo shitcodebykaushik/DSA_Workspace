@@ -1,10 +1,8 @@
-// The will work until the condition is satisfied  .
-#include <iostream>
+#include<bits/stdc++.h>
 using namespace std;
 int main () {
-    int b =45;
-    int c = 349;
-    while (b>c) {
-      std::cout <<"The value is ok "<<endl;
+    int s =1,o=8;
+    while (s<=o){   // means that it will run infinte as s is always smaller then o .
+        cout<<s<<endl;
     }
-}
+} 
