@@ -1,1 +1,1 @@
-4
+Linked List: 10 20 30 
