@@ -1,12 +1,19 @@
-#include <algorithm>
-#include <iostream>
-#include <cstdio>
-#include <vector>
-using namespace std ;
-int main () {
-    vector<int>nums = {1,20,3,4,6};
-    sort(nums.begin(),nums.end());
-    for (int x:nums){
-    cout<<x<<endl;
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+int t;
+cin>>t;
+while(t--){
+    int x;
+    cin>>x;
+    bool divisble = false;
+    for(int i =5;i<=10;i++){
+        
+        if(x%i==0){
+            cout<<i<<endl;
+        }
+    }
 }
 }
