@@ -1,19 +1,17 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-int factorial (int n){
-    // base case 
-    if(n==0){
-        return 1;
-    }
-    int choti = factorial(n-1);
-    int badi = n*choti;
-    return badi ;
-}
-
-int main () {
+int main() {
+	// your code goes here
+int t;
+cin>>t;
+while(t--){
     int n;
     cin>>n;
-    int ans = factorial(n);
-    cout<<ans<<endl;
+    if (n%4>=2){
+        cout<<"Yes"<<endl;
+    }else {
+        cout<<"No"<<endl;
+    }
+}
 }
