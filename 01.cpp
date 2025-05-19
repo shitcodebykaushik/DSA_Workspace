@@ -3,12 +3,11 @@ using namespace std;
 
 int main() {
 	// your code goes here
-int t;
+int t,n;
 cin>>t;
 while(t--){
-    int n;
     cin>>n;
-    if (n%4>=2){
+    if(n%n && n%1==0){
         cout<<"Yes"<<endl;
     }else {
         cout<<"No"<<endl;
