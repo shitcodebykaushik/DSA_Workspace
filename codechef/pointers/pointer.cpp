@@ -31,4 +31,15 @@ int main () {
     cout << mybit2.flag2 << endl;
 
     cout<<"The size of the whole struct is "<<sizeof(myBit)<<endl;  // this give the size of the whole struct not the one variable only .
+// copying the value in the stack 
+int num2 = 5;
+cout<<"The value of the num2 is "<<num2<<endl;
+int *o = &num2;
+cout<<"The address of the num2 is "<<&num2<<endl;
+cout<<"The value of the *o is "<< *o<<endl;
+// Value copied 
+int *i = o;  
+cout<<o<<"-"<<i<<endl;
+cout<<*o<<"-"<<*i<<endl;
+
 }
