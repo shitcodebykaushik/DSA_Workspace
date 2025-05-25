@@ -1,39 +1,30 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    int t, N, M, K;
-    cin >> t;
-    while (t--) {
-        cin >> N >> M >> K;
-        
-        int overall = N * M;
-        int maxalice = -1;
-        if (K == 0) {
-            cout << overall << endl;
-            continue;
-        }
-        for (int i = 1; i < N; i++) {
-            int a1 = i * M;
-            int a2 = (N - i) * M;
+int main(){
+    ios::sync_with_stdio(false);
+    cin.tie(nullptr);
 
-            if (a1 >= K)
-                maxalice = max(maxalice, overall - a1);
-            if (a2 >= K)
-                maxalice = max(maxalice, overall - a2);
-        }
-        for (int j = 1; j < M; j++) {
-            int a1 = j * N;
-            int a2 = (M - j) * N;
+    int T;
+    cin >> T;
+    while (T--) {
+        string s;
+        cin >> s;
+        int n = s.size();
+        int firstClose = 0;
+        while (firstClose < n && s[firstClose] == '(') 
+            firstClose++;
 
-            if (a1 >= K)
-                maxalice = max(maxalice, overall - a1);
-            if (a2 >= K)
-                maxalice = max(maxalice, overall - a2);
+       
+        bool canBreak = false;
+        for (int i = firstClose + 1; i < n; i++) {
+            if (s[i] == '(') {
+                canBreak = true;
+                break;
+            }
         }
 
-        cout << maxalice << endl;
+        cout << (canBreak ? "YES\n" : "NO\n");
     }
-
     return 0;
 }
