@@ -1,1 +1,7 @@
-You failed.
+YES
+NO
+YES
+YES
+NO
+YES
+NO
