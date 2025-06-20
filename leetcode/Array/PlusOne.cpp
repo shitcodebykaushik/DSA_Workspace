@@ -1,3 +1,5 @@
+#include <bits/stdc++.h>
+using namespace std;
 vector<int> plusOne(vector<int>& digits) {
     int n = digits.size();
     
@@ -13,4 +15,25 @@ vector<int> plusOne(vector<int>& digits) {
     // If all digits were 9, we reach here
     digits.insert(digits.begin(), 1);  // e.g. [9,9,9] → [1,0,0,0]
     return digits;
+};
+int main () {
+    vector<int> digits = {1, 2, 3};
+    vector<int> result = plusOne(digits);
+    
+    cout << "Result: ";
+    for (int digit : result) {
+        cout << digit << " ";
+    }
+    cout << endl; // Expected output: Result: 1 2 4
+    
+    digits = {9, 9, 9};
+    result = plusOne(digits);
+    
+    cout << "Result: ";
+    for (int digit : result) {
+        cout << digit << " ";
+    }
+    cout << endl; // Expected output: Result: 1 0 0 0
+    
+    return 0;
 }

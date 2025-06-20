@@ -20,5 +20,13 @@ int main (){
     for(int i =0;i<nums.size();i++){
         cout<<nums[i]<<" ";
     }
+    // Begin things 
+    cout << endl;
+    cout<< "Reversing the first 3 elements:" << endl;
+     reverse(nums.begin(),nums.begin()+3);
+     for(int i = 0;i<nums.size();i++){
+        cout<<nums[i]<<" ";
+     }
+    cout << endl;
     return 0;
 }

@@ -1,3 +1,5 @@
+#include <bits/stdc++.h>
+using namespace std;
 double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
     // Always binary search on smaller array
     if (nums1.size() > nums2.size()) return findMedianSortedArrays(nums2, nums1);
@@ -35,4 +37,15 @@ double findMedianSortedArrays(vector<int>& nums1, vector<int>& nums2) {
     }
 
     return 0.0; // Just to satisfy compiler
+};
+int main (){
+    vector<int> nums1 = {1, 3};
+    vector<int> nums2 = {2};
+    cout << findMedianSortedArrays(nums1, nums2) << endl; // Expected output: 2.0
+
+    vector<int> nums3 = {1, 2};
+    vector<int> nums4 = {3, 4};
+    cout << findMedianSortedArrays(nums3, nums4) << endl; // Expected output: 2.5
+
+    return 0;
 }

@@ -1,3 +1,5 @@
+#include <bits/stdc++.h>
+using namespace std;
 int findPeakElement(vector<int>& nums) {
     int left = 0, right = nums.size() - 1;
 
@@ -14,4 +16,10 @@ int findPeakElement(vector<int>& nums) {
     }
 
     return left; // or right, since left == right at the end
+};
+int main () {
+    vector<int> nums = {1, 2, 3, 1};
+    int peakIndex = findPeakElement(nums);
+    cout << "Peak element index: " << peakIndex << endl; // Expected output: Peak element index: 2
+    return 0;
 }

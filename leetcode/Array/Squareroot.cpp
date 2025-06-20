@@ -1,3 +1,5 @@
+#include <bits/stdc++.h>
+using namespace std;
 int mySqrt(int x) {
     if (x == 0 || x == 1) return x;
 
@@ -20,4 +22,19 @@ int mySqrt(int x) {
     }
 
     return ans;
+};
+int main() {
+    int x;
+    cout << "Enter a non-negative integer: ";
+    cin >> x;
+
+    if (x < 0) {
+        cout << "Invalid input. Please enter a non-negative integer." << endl;
+        return 1;
+    }
+
+    int result = mySqrt(x);
+    cout << "The square root of " << x << " is approximately: " << result << endl;
+
+    return 0;
 }

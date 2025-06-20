@@ -1,3 +1,5 @@
+#include <bits/stdc++.h>
+using namespace std;
 class Solution {
     public:
         int missingNumber(vector<int>& nums) {
@@ -11,3 +13,9 @@ class Solution {
             return nums.size();
         }
     };
+    int main () {
+        Solution sol;
+        vector<int> nums = {3, 0, 1};
+        cout << sol.missingNumber(nums) << endl; // Output: 2
+        return 0;
+    }

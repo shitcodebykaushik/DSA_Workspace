@@ -1,3 +1,5 @@
+#include<bits/stdc++.h>
+using namespace std;
 class Solution {
     public:
         string reverseWords(string s) {
@@ -21,3 +23,10 @@ class Solution {
         } 
     };
     
+int main() {
+    Solution solution;
+    string input = "the sky is blue";
+    string output = solution.reverseWords(input);
+    cout << output << endl; // Expected output: "blue is sky the"
+    return 0;
+}

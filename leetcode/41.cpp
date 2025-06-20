@@ -1,3 +1,5 @@
+#include <bits/stdc++.h>
+using namespace std;
 class Solution {
     public:
         int firstMissingPositive(vector<int>& nums) {
@@ -16,3 +18,9 @@ class Solution {
             return n + 1;
         }
     };
+    int main() {
+        Solution sol;
+        vector<int> nums = {3, 4, -1, 1};
+        cout << sol.firstMissingPositive(nums) << endl; // Output: 2
+        return 0;
+    }

@@ -1,3 +1,5 @@
+#include <bits/stdc++.h>
+using namespace std;
 int romanToInt(string s) {
     unordered_map<char, int> value = {
         {'I', 1}, {'V', 5}, {'X', 10}, {'L', 50},
@@ -18,4 +20,12 @@ int romanToInt(string s) {
     }
 
     return result;
+};
+int main() {
+    string s;
+    cout << "Enter a Roman numeral: ";
+    cin >> s;
+    int result = romanToInt(s);
+    cout << "The integer value is: " << result << endl; // Example output
+    return 0;
 }

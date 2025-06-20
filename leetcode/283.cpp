@@ -1,3 +1,5 @@
+#include <bits/stdc++.h>
+using namespace std;
 class Solution {
     public:
         void moveZeroes(vector<int>& nums) {
@@ -15,3 +17,13 @@ class Solution {
             }
         
     };
+    int main () {
+        Solution sol;
+        vector<int> nums = {0, 1, 0, 3, 12};
+        sol.moveZeroes(nums);
+        for (int num : nums) {
+            cout << num << " ";
+        }
+        cout << endl; // Expected output: 1 3 12 0 0
+        return 0;
+    }

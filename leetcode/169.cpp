@@ -1,3 +1,5 @@
+#include <bits/stdc++.h>
+using namespace std;
 class Solution {
     public:
         int majorityElement(vector<int>& nums) {
@@ -15,3 +17,9 @@ class Solution {
             return m;
         }
     };
+    int main () {
+        Solution sol;
+        vector<int> nums = {3, 2, 3};
+        cout << sol.majorityElement(nums) << endl; // Output: 3
+        return 0;
+    }

@@ -1,3 +1,5 @@
+#include <bits/stdc++.h>
+using namespace std;
 class Solution {
     public:
         string removeOuterParentheses(string s) {
@@ -17,3 +19,9 @@ class Solution {
          return result;
         }
     };
+    int main () {
+        Solution sol;
+        string s = "(()())(())";
+        cout << sol.removeOuterParentheses(s) << endl; // Expected output: "()()()"
+        return 0;
+    }
