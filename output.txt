@@ -1,1 +1,5 @@
-Enter a Roman numeral: The integer value is: 0
+NO
+YES
+YES
+NO
+NO

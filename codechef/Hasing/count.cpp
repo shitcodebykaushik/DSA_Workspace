@@ -1,4 +1,5 @@
 //This code counts and prints how many times each element appears in the array — including duplicates — using nested loops.
+// Here we iterate over array and count the occurrences of each element by comparing it with every other element in the array.
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -26,3 +27,6 @@ while(t--){
     cout<<endl;
 }
 }
+// To optimize the code, we can use a hash map to store the counts of each element.
+// This will reduce the time complexity to O(n) for counting occurrences.
+
