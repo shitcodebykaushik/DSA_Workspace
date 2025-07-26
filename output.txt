@@ -1,5 +1,4 @@
-Alice
-Bob
-Alice
-Alice
-Bob
+Data in n1: 10
+Data in n2 (via n1->next): 20
+Address in n1->next: 0x56c009acd2d0
+Address of n2:       0x56c009acd2d0
