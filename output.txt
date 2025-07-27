@@ -1,4 +1,9 @@
-Data in n1: 10
-Data in n2 (via n1->next): 20
-Address in n1->next: 0x56c009acd2d0
-Address of n2:       0x56c009acd2d0
+Data in n1: 2
+Data in n1: 3
+Data in n1: 4
+Data in n1: 5
+Data in n1: 6
+Data in n1: 7
+Data in n1: 8
+Data in n1: 9
+Base case reached with n1: 10

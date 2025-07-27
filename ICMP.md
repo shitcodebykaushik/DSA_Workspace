@@ -3,3 +3,4 @@
 - Codechef is the way for indian to be in the finalist .
 - Learning about the algorithm is the key  here .
 
+- 6200174 icpc efforts money code blahh
