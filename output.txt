@@ -1,9 +1,3 @@
-Data in n1: 2
-Data in n1: 3
-Data in n1: 4
-Data in n1: 5
-Data in n1: 6
-Data in n1: 7
-Data in n1: 8
-Data in n1: 9
-Base case reached with n1: 10
+*
+**
+***
