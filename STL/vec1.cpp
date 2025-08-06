@@ -19,4 +19,11 @@ int main () {
     }
 cout<<"The new size is "<<vec.size()<<endl;
 cout<<"The new capacity is "<<vec.capacity()<<endl;
-    }
+
+vector<vector<int>>vec1 (5);
+ cout<<"The new size of 2D is "<<vec1.size()<<endl;
+for(int i =0;i<5;i++){
+    // this will print the size of each vector in the vector of vectors
+       cout<<vec1[1][2]<<endl;
+};
+}

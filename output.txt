@@ -1,3 +1,21 @@
-*
-**
-***
+--Initial vector values--
+0
+0
+0
+0
+0
+This size of the vector is 
+5
+This capacity of the vector is 
+5
+--After adding an element to the vector in the last of it --
+The values are 
+0
+0
+0
+0
+0
+4
+The new size is 6
+The new capacity is 10
+The new size of 2D is 5
