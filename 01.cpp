@@ -1,11 +1,10 @@
-#include <iostream>
-#include <thread>
-void hello()
-{
- std::cout<<"Hello Concurrent World\n";
-}
-int main()
-{
- std::thread t(hello);
- t.join();
+#include <bits/stdc++.h>
+using namespace std;
+
+int main() {
+	// your code goes here
+int x,h;
+cin>>x>>h;
+int c = (x-4)*24+h;
+cout<<c<<endl;
 }
