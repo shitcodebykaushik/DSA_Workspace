@@ -3,8 +3,15 @@ using namespace std;
 
 int main() {
 	// your code goes here
-int x,h;
-cin>>x>>h;
-int c = (x-4)*24+h;
-cout<<c<<endl;
+int t;
+cin>>t;
+while(t--){
+    int N;
+    cin>>N;
+    if(N%2==0){
+        cout<<(N/2)<<endl;
+    }else {
+        cout<<(N/2+1)<<endl;
+    }
+}
 }
