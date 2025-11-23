@@ -18,6 +18,7 @@ class Derived:public Base {
 
 
 int main () {
+    /*pointer*/
     Base* ptr;
     Derived d;
     ptr=&d;
