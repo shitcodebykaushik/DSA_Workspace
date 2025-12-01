@@ -1,20 +1,34 @@
 #include <bits/stdc++.h>
 using namespace std;
-
 int main() {
-    ios::sync_with_stdio(false);
-    cin.tie(nullptr);
     
-    int T; 
-    if (!(cin >> T)) return 0;
-    while (T--) {
-        long long a11, a12, a21, a22;
-        cin >> a11 >> a12 >> a21 >> a22;
-        long long s1 = a11 + a22;
-        long long s2 = a12 + a21;
-        long long diff = llabs(s1 - s2);
-        if (min(s1, s2) == 0) diff = max(0LL, diff - 1);
-        cout << diff << '\n';
+    ifstream file("input.txt");
+   
+
+    int current_pos = 50;
+    int zero_hits = 0;
+    
+    string instruction;
+    
+    while (getline(file, instruction)) {
+        if (instruction.empty()) continue;
+
+        char direction = instruction[0];
+        int amount = stoi(instruction.substr(1));
+
+        if (direction == 'R') {
+            current_pos = (current_pos + amount) % 100;
+        } else if (direction == 'L') {
+            current_pos = (current_pos - amount) % 100;
+            if (current_pos < 0) {
+                current_pos += 100;
+            }
+        }
+        if (current_pos == 0) {
+            zero_hits++;
+        }
     }
+    cout << "Password " << zero_hits << endl;
+    file.close();
     return 0;
 }
