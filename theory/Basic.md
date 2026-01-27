@@ -1,5 +1,6 @@
-- g++ filename_cpp This is the build command for the code 
-- Exe file name is the running command `.\a.exe` .
-- Conditional statement can be use to make the code reliable to run the code after checking the conditions .
-- `g++ -o 01 01.cpp`
-- `./01`
+# Quick reference
+
+**Build:** `g++ -o 01 01.cpp`  
+**Run:** `./01` (or `.\a.exe` on Windows)
+
+Full setup, complexity, and DSA content: **[DSA_Foundation.md](DSA_Foundation.md)**.

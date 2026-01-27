@@ -1,24 +1,24 @@
-// Source - https://stackoverflow.com/q/79841435
-// Posted by Error-42, modified by community. See post 'Timeline' for change history
-// Retrieved 2025-12-10, License - CC BY-SA 4.0
-
-#include <array>
-#include <iostream>
-
+#include <bits/stdc++.h>
 using namespace std;
 
-array<int, 2> a;
-
-array<int, 2>& f() {
-    cout << "f" << endl;
-    return a;
+int search(vector<int>& nums, int target) {
+    int low = 0, high = nums.size() - 1;
+    while (low <= high) {
+        int mid = low + (high - low) / 2; 
+        if (nums[mid] == target) {
+            return mid;
+        } else if (nums[mid] > target) {
+            high = mid - 1;
+        } else {
+            low = mid + 1;
+        }
+    }
+    return -1;
 }
 
-int g(int const x) {
-    cout << "g " << x << endl;
-    return x;
-}
-
-int main() {
-    f() = { g(1), g(2) };
+int main  () {
+    vector<int> j = {47, 48, 49, 60, 70, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000};
+    int d = 100;
+    int c = search(j, d);
+    cout << c << endl;
 }
