@@ -1,1 +1,4 @@
-1
+Original
+ [ 8, 9, 68, 7 ] 
+After sorted 
+ [ 7, 8, 9, 68 ] 

@@ -16,9 +16,14 @@ int search(vector<int>& nums, int target) {
     return -1;
 }
 
+int N;
+char x[110];
+
 int main  () {
-    vector<int> j = {47, 48, 49, 60, 70, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 2000};
-    int d = 100;
-    int c = search(j, d);
-    cout << c << endl;
+   scanf("%d\n",&N);
+   while(N--){
+    scanf("0.%[0-9]..,\n", &x);
+
+    printf("The digits are 0.%s\n",x);
+   }
 }
