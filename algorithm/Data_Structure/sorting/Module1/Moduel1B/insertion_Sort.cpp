@@ -43,4 +43,6 @@ int main () {
     insertionSort(arr,5);
     printArray(arr,5);
 
-}
+};
+
+/*Task is solve these sort only a subarray  and one task is to add counter to measure the number of the shifts performed for a given input */
