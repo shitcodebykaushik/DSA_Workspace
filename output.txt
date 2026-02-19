@@ -1,4 +1,1 @@
-Original
- [ 8, 9, 68, 7 ] 
-After sorted 
- [ 7, 8, 9, 68 ] 
+Key 5 found at index 3.

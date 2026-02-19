@@ -13,8 +13,7 @@ void selectionSort(int arr[], int n) {
         // Swap the found minimum with the element at i
         swap(arr[i], arr[min_index]);
     }
-}
-
+};
 int main() {
     int arr[] = {29, 10, 14, 37, 13};
     int n = sizeof(arr) / sizeof(arr[0]);
