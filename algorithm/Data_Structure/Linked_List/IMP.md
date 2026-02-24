@@ -9,3 +9,9 @@
 
 # Complete Search 
 - Complete Search is general method that can be used to solve almost any algorithm problem . The idea is to generate all possible solution to the problem using the brute force and then select the best solution or count the number of solution , depending on the problem . 
+
+
+- CA and sub cA used in the encryption .
+- Dx  data encryption key 
+- AD  
+- 
