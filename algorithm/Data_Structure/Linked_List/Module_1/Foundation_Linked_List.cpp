@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
+// This whole code is for the link list which means that it hold "Head knows the address of the previous head"
 
 // This is the class with the name of the linked list
 class LinkedList  {
@@ -35,9 +36,9 @@ class LinkedList  {
         };
         // Insertion at the front of the linked list 
         void insertFront (int val) {
-            Node* newNode = new Node (val);
-            newNode->next=head;
-            head = newNode;
+            Node* newNode = new Node (val);  // here is the main logic of the linking which means that we created the pointer by tge name of the newNode and used new to assignt he space anc called he consturcuto node to give the value and then 
+            newNode->next=head; // we came here we newNode with the arraow operator  to find the address of the next and with this = we get the address of the head 
+            head = newNode;  //After the address is copied then we pass this to head so after moving all these now our head know the address of the previous one 
         };
 
         // Insertion at the back of the linked list
@@ -133,6 +134,8 @@ class LinkedList  {
     };
 
     // This is printing the linked list .
+
+    // Here is the check for the one of the good practice that is we are following here which is the word const after the function declaration this is a good practice to follow because it tells the compiler that this function will not modify any member variable of the class and if we try to modify any member variable inside this function then the compiler will give us an error and this can help us to avoid accidental modification of the class member variables and it also allows us to call this function on const objects of the class which can be useful in certain situations.
     void print() const {
         Node*current = head ;
         while(current != nullptr) {
