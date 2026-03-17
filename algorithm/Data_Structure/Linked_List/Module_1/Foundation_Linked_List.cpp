@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 // This whole code is for the link list which means that it hold "Head knows the address of the previous head"
-
+// THis code is the purest form of the linked list where we did head to head which is one form of the  singly linked list the other form is head to tail .
 // This is the class with the name of the linked list
 class LinkedList  {
 
