@@ -3,7 +3,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int sq (int a,int b) {
+long long sq (long long  a,long long  b) {
     int result =  1;
     while(b>0){
     if(b%2==1){
@@ -15,11 +15,13 @@ int sq (int a,int b) {
     return result;
 };
 int main () {
-    int a = sq(3,13);
+   long long  a = sq(2,7896);
     cout<<a<<endl;
-    int b = sq(2,10);
+    int b = sq(4,10);
     cout<<b<<endl;
     int c = sq(5,3);
     cout<<c<<endl;
+    int g = sq(2,7896);
+    cout<<g<<endl;
     return 0;
 }
