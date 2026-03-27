@@ -1,29 +1,64 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 using namespace std;
 
-int search(vector<int>& nums, int target) {
-    int low = 0, high = nums.size() - 1;
-    while (low <= high) {
-        int mid = low + (high - low) / 2; 
-        if (nums[mid] == target) {
-            return mid;
-        } else if (nums[mid] > target) {
-            high = mid - 1;
-        } else {
-            low = mid + 1;
+void solve() {
+    int n, k;
+    cin >> n >> k;
+
+    vector<int> a(n), b(n);
+    for (int i = 0; i < n; i++) {
+        cin >> a[i];
+    }
+    for (int i = 0; i < n; i++) {
+        cin >> b[i];
+    }
+
+    int best = 0;
+
+    for (int i = 0; i < n; i++) {
+        for (int j = i + 1; j < n; j++) {
+            int big;
+            if (a[i] > a[j]) {
+                big = a[i];
+            } else {
+                big = a[j];
+            }
+
+            int small;
+            if (a[i] <= a[j]) {
+                small = a[i];
+            } else {
+                small = a[j];
+            }
+
+            int discount;
+            if (big / 2 < 100) {
+                discount = big / 2;
+            } else {
+                discount = 100;
+            }
+
+            int cost = small + (big - discount);
+
+            if (cost <= k) {
+                int currentTaste = b[i] + b[j];
+                if (currentTaste > best) {
+                    best = currentTaste;
+                }
+            }
         }
     }
-    return -1;
+
+    cout << best << "\n";
 }
 
-int N;
-char x[110];
-
-int main  () {
-   scanf("%d\n",&N);
-   while(N--){
-    scanf("0.%[0-9]..,\n", &x);
-
-    printf("The digits are 0.%s\n",x);
-   }
+int main() {
+    int t;
+    cin >> t;
+    while (t > 0) {
+        solve();
+        t = t - 1;
+    }
+    return 0;
 }
