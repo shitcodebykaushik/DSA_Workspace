@@ -1,1 +1,4 @@
-plleh
+After inserting 15 : 
+After inserting 20 : 
+After inserting 10 : 
+After inserting 8 : 
