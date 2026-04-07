@@ -1,4 +1,4 @@
-After inserting 15 : 
-After inserting 20 : 
-After inserting 10 : 
-After inserting 8 : 
+Books in the store are :- 
+ID: 1, Title:  DSA, Price: 8
+ID: 2, Title: ABCFRWDLF, Price: 5
+Please enter  BookID which yoy want to delete
