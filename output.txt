@@ -1,4 +1,5 @@
-Books in the store are :- 
-ID: 1, Title:  DSA, Price: 8
-ID: 2, Title: ABCFRWDLF, Price: 5
-Please enter  BookID which yoy want to delete
+1
+3
+1
+1
+v and v1 are not equal
