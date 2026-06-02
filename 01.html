@@ -1,0 +1,553 @@
+import os
+from weasyprint import HTML
+
+html_content = """
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Punjab History & Culture - Master Companion</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 22mm 18mm;
+            @bottom-right {
+                content: "Page " counter(page) " of " counter(pages);
+                font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+                font-size: 9pt;
+                color: #718096;
+            }
+            @bottom-left {
+                content: "PSSSB Excise & Taxation Inspector Exam Elite Guide";
+                font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+                font-size: 9pt;
+                color: #718096;
+            }
+        }
+        
+        body {
+            font-family: 'Segoe UI', Helvetica, Arial, sans-serif;
+            color: #2d3748;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+        }
+
+        .cover-page {
+            page-break-after: always;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            border: 2px solid #1a365d;
+            padding: 40px;
+            margin-top: 100px;
+            border-radius: 8px;
+            background-color: #f7fafc;
+        }
+
+        .cover-title {
+            color: #1a365d;
+            font-size: 28pt;
+            font-weight: 800;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .cover-subtitle {
+            color: #dd6b20;
+            font-size: 16pt;
+            font-weight: 600;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #dd6b20;
+            padding-bottom: 15px;
+        }
+
+        .cover-meta {
+            font-size: 12pt;
+            color: #4a5568;
+            margin-top: auto;
+            line-height: 1.8;
+        }
+
+        .page-header {
+            border-bottom: 2px solid #1a365d;
+            padding-bottom: 8px;
+            margin-bottom: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+
+        .page-header h1 {
+            color: #1a365d;
+            font-size: 14pt;
+            margin: 0;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .page-container {
+            page-break-after: always;
+        }
+        
+        .page-container:last-child {
+            page-break-after: avoid;
+        }
+
+        h2 {
+            color: #1a365d;
+            font-size: 16pt;
+            margin: 0 0 15px 0;
+            font-weight: 700;
+            text-transform: uppercase;
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 5px;
+        }
+
+        h3 {
+            color: #dd6b20;
+            font-size: 12pt;
+            margin: 18px 0 8px 0;
+            font-weight: 600;
+            page-break-after: avoid;
+        }
+
+        p {
+            font-size: 10.5pt;
+            margin: 0 0 12px 0;
+            text-align: justify;
+        }
+
+        ul {
+            margin: 0 0 15px 0;
+            padding-left: 20px;
+        }
+
+        li {
+            font-size: 10.5pt;
+            margin-bottom: 6px;
+            text-align: justify;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+
+        th {
+            background-color: #1a365d;
+            color: #ffffff;
+            text-align: left;
+            padding: 8px 10px;
+            font-weight: 600;
+            border: 1px solid #1a365d;
+        }
+
+        td {
+            padding: 8px 10px;
+            border: 1px solid #e2e8f0;
+            vertical-align: top;
+        }
+
+        tr:nth-child(even) td {
+            background-color: #f7fafc;
+        }
+
+        .highlight-box {
+            background-color: #fffaf0;
+            border-left: 4px solid #dd6b20;
+            padding: 12px 15px;
+            margin: 15px 0;
+            font-size: 10pt;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .diagram-box {
+            background-color: #ebf8ff;
+            border: 1px dashed #3182ce;
+            padding: 10px;
+            text-align: center;
+            font-weight: 600;
+            color: #2b6cb0;
+            font-size: 10pt;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- COVER PAGE -->
+    <div class="cover-page">
+        <div class="cover-title">Punjab History & Culture</div>
+        <div class="cover-subtitle">10-Page Exam-Oriented High-Yield Master Companion</div>
+        <div class="cover-meta">
+            <strong>Target Exam:</strong> PSSSB Excise & Taxation Inspector Exam<br>
+            <strong>Section Weightage:</strong> Part B (Strategic Core - 17 Marks Focus)<br>
+            <strong>Syllabus Scope:</strong> Ancient Composition to Modern Reorganization (1966)<br>
+            <strong>Design Strategy:</strong> Structured Timeline Layout & High-Yield Fact Compilations
+        </div>
+    </div>
+
+    <!-- PAGE 1 -->
+    <div class="page-container">
+        <div class="page-header"><h1>Page 1: Physical Features & Nomenclature</h1></div>
+        <h2>Physical Features & Ancient Composition of Punjab</h2>
+        <h3>Etymology and Historical Nomenclature</h3>
+        <p>The geographical boundaries of Punjab have consistently evolved across distinct historical eras, drastically altering its name within classical texts:</p>
+        <ul>
+            <li><strong>Etymology:</strong> Derived from two Persian words—<em>Panj</em> (Five) and <em>Ab</em> (Water)—translating directly to the "Land of Five Rivers" (Sutlej, Beas, Ravi, Chenab, Jhelum).</li>
+            <li><strong>Rigvedic Era:</strong> Referred to as <strong>Sapta Sindhu</strong> (Land of Seven Rivers), which included the primary five along with the <em>Sindhu</em> (Indus) and the now-extinct <em>Saraswati</em>.</li>
+            <li><strong>Puranas & Epics (Ramayana/Mahabharata):</strong> Formally documented as <strong>Panchnad</strong>.</li>
+            <li><strong>Greek Accounts:</strong> Named <strong>Pentapotamia</strong> by Hellenistic chroniclers following Alexander’s campaigns.</li>
+            <li><strong>Hiuen Tsang (Chinese Traveler):</strong> Documented the region as <strong>Taki</strong> after a dominant ruling tribe.</li>
+            <li><strong>Mughal & Sikh Rule:</strong> Identified as the <em>Province of Lahore</em> under Akbar and later the <em>Lahore Kingdom</em> during the reign of Maharaja Ranjit Singh.</li>
+        </ul>
+
+        <h3>The Strategic Value of the Doabs</h3>
+        <p>The physical terrain of Punjab is split into fertile interfluves (plains between two rivers) known as <strong>Doabs</strong>. Akbar established this nomenclature by combining the first syllables of the bordering rivers:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 25%;">Doab Name</th>
+                    <th style="width: 35%;">Bordering Rivers</th>
+                    <th style="width: 40%;">Crucial Regional Hubs</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>Bist Jalandhar Doab</strong></td><td>Beas and Sutlej</td><td>Jalandhar, Hoshiarpur, Kapurthala</td></tr>
+                <tr><td><strong>Bari Doab</strong> (Majha)</td><td>Beas and Ravi</td><td>Amritsar, Gurdaspur, Pathankot, Lahore</td></tr>
+                <tr><td><strong>Rechna Doab</strong></td><td>Ravi and Chenab</td><td>Sialkot, Gujranwala</td></tr>
+                <tr><td><strong>Chaj Doab</strong></td><td>Chenab and Jhelum</td><td>Gujrat, Shahpur</td></tr>
+                <tr><td><strong>Sindh Sagar Doab</strong></td><td>Jhelum and Indus (Sindh)</td><td>Rawalpindi, Attock</td></tr>
+            </tbody>
+        </table>
+
+        <h3>Topographical Classification</h3>
+        <ul>
+            <li><strong>The Shivalik Hills:</strong> The narrow, sub-mountainous northern zone spanning Gurdaspur, Hoshiarpur, Rupnagar, and Nawanshahr.</li>
+            <li><strong>The Plains (Alluvial):</strong> Divided into <strong>Majha</strong> (the central Bari Doab; cultural heartland), <strong>Doaba</strong> (the Bist-Jalandhar area, highly prosperous), and <strong>Malwa</strong> (the expansive plains south of the Sutlej River including Ludhiana, Patiala, Bhatinda, Ferozepur, Mansa, and Sangrur).</li>
+            <li><strong>The Semi-Arid Southwestern Zone:</strong> Bordering Rajasthan (Fazilka, Muktsar).</li>
+        </ul>
+    </div>
+
+    <!-- PAGE 2 -->
+    <div class="page-container">
+        <div class="page-header"><h1>Page 2: Archaeology & Early Invasions</h1></div>
+        <h2>Archaeology, The Vedic Period & Early Invasions</h2>
+        <h3>Indus Valley Civilization (IVC) Sites in Punjab</h3>
+        <p>Punjab’s fertile alluvial soil, continuously replenished by Himalayan rivers, sustained some of the earliest urban footprints of South Asia. Key archaeological sites found in the state include:</p>
+        <ul>
+            <li><strong>Ropar (Rupnagar):</strong> Located on the banks of the Sutlej River. Excavated post-independence by <strong>Y.D. Sharma (1953)</strong>. It provides a continuous cultural sequence from Harappan to Medieval eras. Notable findings include copper axes, distinct steatite seals, and an unusual burial site where a human was interred alongside a dog.</li>
+            <li><strong>Sunet:</strong> Situated in Ludhiana; known for significant yields of Yaudheya coins and ancient clay sealings.</li>
+            <li><strong>Sanghol (Ucha Pind):</strong> Located in Fatehgarh Sahib; famous for Kushan-era Buddhist stupas, pillars, and exquisite stone sculptures.</li>
+            <li><strong>Kotla Nihang Khan:</strong> An early-phase Harappan settlement located in Rupnagar.</li>
+        </ul>
+
+        <h3>The Vedic Crucible</h3>
+        <p>As Indo-Aryan tribes migrated toward the subcontinent, they chose ancient Punjab as their foundational settlement. The vast majority of the <strong>Rig Veda</strong> hymns were composed on the riverbanks of the Sapta Sindhu. The region quickly evolved into a prime center for Vedic philosophy, jurisprudence, and language. <strong>Taxila</strong> (historically part of greater Punjab) became an intellectual hub where the grammarian <strong>Panini</strong> compiled the <em>Ashtadhyayi</em>.</p>
+
+        <h3>Classical Invasions & The Battle of Hydaspes (326 BCE)</h3>
+        <p>Because of its unique location, the northwestern passes served as the main entry point for foreign military campaigns into mainland India.</p>
+        <div class="diagram-box">
+            Northwestern Mountain Passes (Khyber/Bolan) ──> Gateway to Punjab Plain ──> Main Entry for Invaders
+        </div>
+        <ul>
+            <li><strong>Darius I (Persian):</strong> Annexed parts of the Indus valley in the late 6th Century BCE.</li>
+            <li><strong>Alexander the Great (Macedonian):</strong> Marched across the Hindu Kush in 326 BCE.</li>
+            <li><strong>The Battle of Hydaspes:</strong> Fought on the banks of the <strong>Jhelum River</strong> (Hydaspes in Greek). <strong>King Porus (Paurava)</strong> fiercely resisted Alexander's forces. Impressed by Porus's bravery, Alexander restored his kingdom and extended his territory.</li>
+            <li><strong>The Retreat:</strong> Alexander's troops mutinied at the <strong>Beas River (Hyphasis)</strong>, refusing to march further east to face the Nanda Empire, which forced him to turn backward.</li>
+        </ul>
+    </div>
+
+    <!-- PAGE 3 -->
+    <div class="page-container">
+        <div class="page-header"><h1>Page 3: Medieval Punjab</h1></div>
+        <h2>Medieval Punjab under the Sultanate & Mughals</h2>
+        <h3>The Ghaznavid and Ghorid Conquests</h3>
+        <p>During the medieval transition, Punjab shifted from a defensive frontier under the Hindu Shahi Dynasty (represented by Kings Jaipal and Anandpal) to a key province within successive Islamic empires.</p>
+        <ul>
+            <li><strong>Mahmud of Ghazni:</strong> Defeated Jaipal at the <strong>Battle of Peshawar (1001 CE)</strong>. This shattered the Hindu Shahi defense system and established Ghaznavid administrative bases inside Lahore.</li>
+            <li><strong>Battles of Tarain (1191 & 1192 CE):</strong> Fought between <strong>Mu'izz ad-Din Muhammad Ghori</strong> and the Rajput confederacy led by <strong>Prithviraj Chauhan</strong>. The second battle firmly secured the gateway of Punjab and Delhi for the Ghurid Empire.</li>
+        </ul>
+
+        <h3>The Delhi Sultanate Era</h3>
+        <p>Throughout the Mamluk, Khilji, Tughlaq, Sayyid, and Lodi Dynasties, Punjab remained strategically vital. It stood as the first line of defense against Mongol incursions and served as the primary trade highway connecting Delhi with Central Asia.</p>
+        <ul>
+            <li><strong>The Mongol Threat:</strong> Balban strengthened northwestern forts like Bhatinda, Sunam, and Samana to counter Mongol raids.</li>
+            <li><strong>Economic Footprint:</strong> <strong>Abohar</strong> grew into a key trade station along the major Multan-Delhi commercial corridor.</li>
+        </ul>
+
+        <h3>The Mughal-Afghan Transition</h3>
+        <ul>
+            <li><strong>First Battle of Panipat (1526 CE):</strong> <strong>Zahir-ud-din Muhammad Babur</strong> defeated Ibrahim Lodi, ending the Delhi Sultanate and founding the Mughal Empire. Babur initiated this campaign by securing his hold over central Punjab.</li>
+            <li><strong>Administrative Setup:</strong> Under Emperor Akbar's <em>Ain-i-Akbari</em>, Punjab was organized into the <strong>Subah of Lahore</strong> and the <strong>Subah of Multan</strong>. The administrative subdivisions were split along the natural boundaries of the five major Doabs.</li>
+        </ul>
+    </div>
+
+    <!-- PAGE 4 -->
+    <div class="page-container">
+        <div class="page-header"><h1>Page 4: Sikh Gurus (Early Foundation)</h1></div>
+        <h2>The Sikh Gurus — Foundation to Institutionalization</h2>
+        <div class="diagram-box">
+            Guru Nanak Dev (Langar/Sangat) ──> Guru Angad (Gurmukhi) ──> Guru Amar Das (Manji System) ──> Guru Ram Das (Amritsar)
+        </div>
+
+        <h3>1. Guru Nanak Dev Ji (1469–1539)</h3>
+        <ul>
+            <li><strong>Birth:</strong> Talwandi Rai Bhoe (now Nankana Sahib, Pakistan) in the Kartika Purnima week.</li>
+            <li><strong>Parents:</strong> Mehta Kalu (father) and Mata Tripta Ji (mother).</li>
+            <li><strong>Key Philosophies:</strong> <em>Kirat Karo</em> (honest labor), <em>Naam Japna</em> (remembering God), <em>Vand Chhako</em> (sharing earnings). He introduced <strong>Langar</strong> (the community kitchen) and <strong>Sangat</strong> (the holy congregation) to dismantle caste hierarchies.</li>
+            <li><strong>Divine Travels (Udasis):</strong> Completed four extensive journeys across the subcontinent and the Middle East to spread monotheism (<em>Ik Onkar</em>).</li>
+            <li><strong>City Founded:</strong> <strong>Kartarpur</strong> (on the banks of the Ravi River) where he spent his final years.</li>
+        </ul>
+
+        <h3>2. Guru Angad Dev Ji (1504–1552)</h3>
+        <ul>
+            <li><strong>Original Name:</strong> Bhai Lehna Ji.</li>
+            <li><strong>Script Standardization:</strong> Formalized and standardized the <strong>Gurmukhi Script</strong>, ensuring spiritual and secular literature was accessible to the public.</li>
+            <li><strong>Physical Education:</strong> Established <strong>Mall Akhara</strong> systems to promote physical fitness alongside spiritual discipline.</li>
+            <li><strong>City Founded:</strong> Khadur Sahib.</li>
+        </ul>
+
+        <h3>3. Guru Amar Das Ji (1479–1574)</h3>
+        <ul>
+            <li><strong>Administrative System:</strong> Devised the <strong>Manji System</strong> (22 distinct administrative zones) and the <em>Piri System</em> to appoint representatives to spread the core teachings of Sikhism.</li>
+            <li><strong>Social Reforms:</strong> Strongly campaigned against the practices of <em>Sati</em> and <em>Purdah</em>, while actively encouraging widow remarriage.</li>
+            <li><strong>Architectural Legacy:</strong> Constructed the <strong>Baoli</strong> (stepwell featuring 84 steps) at Goindwal Sahib.</li>
+            <li><strong>Anand Sahib:</strong> Composed the celebrated hymn <em>Anand Sahib</em>, which is recited during major ceremonies.</li>
+        </ul>
+
+        <h3>4. Guru Ram Das Ji (1534–1581)</h3>
+        <ul>
+            <li><strong>Original Name:</strong> Bhai Jetha Ji.</li>
+            <li><strong>City Founded:</strong> <strong>Ramdaspur</strong>, which later became known as <strong>Amritsar</strong>. He excavated the sacred tanks of <em>Santokhsar</em> and <em>Amritsar</em>.</li>
+            <li><strong>Lavan:</strong> Composed the four-stanza wedding hymn (<em>Lavan</em>) to institutionalize the Sikh marriage ceremony, <em>Anand Karaj</em>.</li>
+            <li><strong>Masand System:</strong> Created a network of representatives to collect voluntary contributions (<em>Dasvandh</em>) to fund community infrastructure projects.</li>
+        </ul>
+    </div>
+
+    <!-- PAGE 5 -->
+    <div class="page-container">
+        <div class="page-header"><h1>Page 5: Sikh Gurus (Consolidation)</h1></div>
+        <h2>The Sikh Gurus — Consolidation to Martyrdom</h2>
+
+        <h3>5. Guru Arjan Dev Ji (1563–1606)</h3>
+        <ul>
+            <li><strong>Compilation of Adi Granth (1604):</strong> Compiled the primary Sikh scripture, the <strong>Adi Granth</strong>, preserving the compositions of the first five Gurus alongside verses from Bhakti and Sufi saints like Kabir, Baba Farid, and Ravidas. <strong>Bhai Gurdas Ji</strong> served as the primary scribe.</li>
+            <li><strong>Harmandir Sahib:</strong> Designed and oversaw the construction of Harmandir Sahib (The Golden Temple) in Amritsar. He invited the Sufi saint <strong>Mian Mir</strong> to lay its foundation stone to emphasize interfaith harmony.</li>
+            <li><strong>Cities Founded:</strong> Tarn Taran Sahib, Kartarpur (Doaba), and Sri Hargobindpur.</li>
+            <li><strong>Martyrdom:</strong> Arrested under the orders of Mughal Emperor Jahangir for refusing to alter the Adi Granth text. He became the <strong>First Martyr of the Sikh Faith</strong> in 1606.</li>
+        </ul>
+
+        <h3>6. Guru Hargobind Ji (1595–1644)</h3>
+        <ul>
+            <li><strong>Miri and Piri Concept:</strong> Introduced a dual-sword policy symbolizing <strong>Miri</strong> (temporal, political authority) and <strong>Piri</strong> (spiritual authority), adapting the community to defend against state persecution.</li>
+            <li><strong>Akal Takht:</strong> Constructed the <strong>Akal Takht</strong> (Throne of the Timeless One) in 1609 directly facing Harmandir Sahib to handle temporal and political matters.</li>
+            <li><strong>Fortification:</strong> Built the fortress of <em>Lohgarh</em> in Amritsar and maintained a standing defensive army.</li>
+            <li><strong>City Founded:</strong> Kiratpur Sahib.</li>
+        </ul>
+
+        <h3>7. Guru Har Rai Ji (1630–1661)</h3>
+        <ul>
+            <li><strong>Alliances:</strong> Offered medical aid to Dara Shikoh, the liberal eldest son of Emperor Shah Jahan, during the Mughal war of succession.</li>
+            <li><strong>Environmental/Medical Focus:</strong> Established a prominent Ayurvedic herbal medicine hospital and research center at Kiratpur Sahib.</li>
+        </ul>
+
+        <h3>8. Guru Har Krishan Ji (1556–1664)</h3>
+        <ul>
+            <li><strong>Youngest Guru:</strong> Assumed office at the age of five; affectionately remembered as <em>"Bala Pritam"</em>.</li>
+            <li><strong>Humanitarian Work:</strong> Dedicated his time to treating cholera and smallpox epidemics in Delhi, where he eventually contracted smallpox and passed away.</li>
+            <li><strong>Historical Site:</strong> The place where he stayed in Delhi is preserved as the <strong>Gurdwara Bangla Sahib</strong>.</li>
+        </ul>
+    </div>
+
+    <!-- PAGE 6 -->
+    <div class="page-container">
+        <div class="page-header"><h1>Page 6: Khalsa & Banda Singh Bahadur</h1></div>
+        <h2>The Birth of Khalsa and the Era of Banda Singh Bahadur</h2>
+
+        <h3>9. Guru Tegh Bahadur Ji (1621–1675)</h3>
+        <ul>
+            <li><strong>Titles:</strong> Honored as <strong>Hind Di Chadar</strong> (Shield of India) for defending religious freedom.</li>
+            <li><strong>Sacrifice:</strong> Executed at Chandni Chowk, Delhi, under the orders of Aurangzeb for defending the religious rights of Kashmiri Pandits who sought his protection.</li>
+            <li><strong>Historical Gurdwaras:</strong> <strong>Gurdwara Sis Ganj Sahib</strong> marks the site of his execution, while <strong>Gurdwara Rakab Ganj Sahib</strong> marks his cremation site in Delhi.</li>
+            <li><strong>City Founded:</strong> Anandpur Sahib (originally named Chakk Nanaki).</li>
+        </ul>
+
+        <h3>10. Guru Gobind Singh Ji (1666–1708)</h3>
+        <ul>
+            <li><strong>Birth:</strong> Patna Sahib, Bihar (1666).</li>
+            <li><strong>Creation of the Khalsa (March 30, 1699):</strong> Founded the <strong>Khalsa Panth</strong> at Anandpur Sahib during Baisakhi. He initiated the <strong>Panj Pyares</strong> (Five Beloved Ones) and introduced the mandatory <strong>5 Ks</strong>:</li>
+        </ul>
+        <div class="diagram-box">
+            [Kesh: Uncut Hair] -> [Kangha: Wooden Comb] -> [Kara: Iron Bracelet] -> [Kachera: Undergarment] -> [Kirpan: Dagger]
+        </div>
+        <ul>
+            <li><strong>Literary Contributions:</strong> Authored the <em>Zafarnama</em> (Epistle of Victory) sent directly to Aurangzeb from Dina Kanjpura. His major writings are compiled in the <em>Dasam Granth</em>.</li>
+            <li><strong>Major Battles:</strong> Fought battles against hill chiefs and Mughal forces, including the Battles of Bhangani, Nadaun, Anandpur Sahib, Chamkaur Sahib, and Muktsar (<em>Khidrane Di Dhab</em>).</li>
+            <li><strong>Zonal Succession:</strong> Declared the line of living Gurus complete, passing eternal spiritual authority to the <strong>Guru Granth Sahib Ji</strong>. He passed away at Nanded (Hazur Sahib) in 1708.</li>
+        </ul>
+
+        <h3>The Military Campaigns of Banda Singh Bahadur (1708–1716)</h3>
+        <ul>
+            <li><strong>Rise:</strong> Commissioned by Guru Gobind Singh Ji at Nanded to lead the Sikh military forces against oppression in Punjab.</li>
+            <li><strong>Battle of Chappar Chiri (1710):</strong> Defeated the Mughal Governor of Sirhind, Wazir Khan, to avenge the executions of the younger sons of Guru Gobind Singh Ji (<em>Chhoti Sahibzade</em>).</li>
+            <li><strong>Sovereignty:</strong> Established his capital at <strong>Mukhlispur</strong> (renamed Lohgarh) and issued coins in the names of Guru Nanak Dev Ji and Guru Gobind Singh Ji.</li>
+            <li><strong>Execution:</strong> Captured during the siege of Gurdas Nangal and executed in Delhi under Mughal Emperor Farrukhsiyar in 1716.</li>
+        </ul>
+    </div>
+
+    <!-- PAGE 7 -->
+    <div class="page-container">
+        <div class="page-header"><h1>Page 7: Misl Period & Holocausts</h1></div>
+        <h2>The Misl Period & Twin Holocausts (18th Century)</h2>
+        <p>Following the execution of Banda Singh Bahadur, Punjab entered a period of political fragmentation, facing repeated invasions from Persia (Nadir Shah) and Afghanistan (Ahmed Shah Abdali).</p>
+
+        <h3>The Twin Holocausts (Ghallughara)</h3>
+        <ul>
+            <li><strong>Chhota Ghallughara (First Holocaust - 1746):</strong> A surprise military assault carried out by Lakhpat Rai (minister of Mughal Governor Yahiya Khan) at <strong>Kahnuwan</strong> (Gurdaspur district), resulting in the deaths of over 7,000 Sikh soldiers and civilians.</li>
+            <li><strong>Vadda Ghallughara (Second Holocaust - 1762):</strong> A massive surprise attack launched by <strong>Ahmed Shah Abdali</strong> near <strong>Kup Rohira</strong> (Malerkotla district), resulting in the loss of an estimated 20,000 to 35,000 Sikh lives in a single day.</li>
+        </ul>
+
+        <h3>Evolution of the Dal Khalsa & The Misl System</h3>
+        <div class="diagram-box">
+            Guerrilla Jathas ──> Unified into Taruna Dal & Buddha Dal (1734) ──> Formed Dal Khalsa under Jassa Singh Ahluwalia (1748)
+        </div>
+        <table>
+            <thead>
+                <tr>
+                    <th style="width: 30%;">Misl Name</th>
+                    <th style="width: 35%;">Founder / Leader</th>
+                    <th style="width: 35%;">Historical Significance</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>Sukerchakia Misl</strong></td><td>Charat Singh / Mahan Singh</td><td>The Misl into which Maharaja Ranjit Singh was born.</td></tr>
+                <tr><td><strong>Ahluwalia Misl</strong></td><td>Jassa Singh Ahluwalia</td><td>Led collective Dal Khalsa forces; established Kapurthala State.</td></tr>
+                <tr><td><strong>Bhangi Misl</strong></td><td>Hari Singh Bhangi</td><td>Controlled major urban centers including Amritsar & Lahore early on.</td></tr>
+                <tr><td><strong>Phulkian Misl</strong></td><td>Baba Ala Singh</td><td>Controlled the Cis-Sutlej states of Patiala, Nabha, and Jind.</td></tr>
+                <tr><td><strong>Kanheya Misl</strong></td><td>Jai Singh Kanheya</td><td>Maintained strong control over sections of the Gurdaspur region.</td></tr>
+                <tr><td><strong>Ramgarhia Misl</strong></td><td>Jassa Singh Ramgarhia</td><td>Skilled military strategist; constructed historic Ramgarhia Bunga.</td></tr>
+                <tr><td><strong>Singhpuria Misl</strong></td><td>Nawab Kapur Singh</td><td>Initiated the early organizational grouping of the Misl systems.</td></tr>
+                <tr><td><strong>Shaheedan Misl</strong></td><td>Baba Deep Singh Ji</td><td>Guarded religious institutions; centered around Talwandi Sabo.</td></tr>
+                <tr><td><strong>Dallewalia Misl</strong></td><td>Gulab Singh Dallewalia</td><td>Maintained territory along the banks of the upper Sutlej River.</td></tr>
+                <tr><td><strong>Nakai Misl</strong></td><td>Hira Singh</td><td>Held territorial influence southwest of Lahore.</td></tr>
+                <tr><td><strong>Karor Singhia Misl</strong></td><td>Baghel Singh</td><td>Baghel Singh captured Delhi and built historical Gurdwaras.</td></tr>
+                <tr><td><strong>Nishanwalia Misl</strong></td><td>Dasaundha Singh</td><td>Standard-bearers of the collective armies during campaigns.</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- PAGE 8 -->
+    <div class="page-container">
+        <div class="page-header"><h1>Page 8: The Empire of Ranjit Singh</h1></div>
+        <h2>The Sikh Empire — Reign of Maharaja Ranjit Singh</h2>
+        <h3>Consolidated Rise to Power (1799–1839)</h3>
+        <ul>
+            <li><strong>Birth:</strong> November 2, 1780, at Gujranwala, to Mahan Singh of the Sukerchakia Misl.</li>
+            <li><strong>Capture of Lahore (1799):</strong> Defeated the Bhangi rulers of Lahore, turning the city into his formal political capital. He was formally crowned <strong>Maharaja of Punjab</strong> on April 12, 1801.</li>
+            <li><strong>Religious Capital:</strong> Captured Amritsar from the Bhangi Misl in 1802, bringing the two major cities of Punjab under unified rule.</li>
+        </ul>
+
+        <h3>Key Treaties and Strategic Borders</h3>
+        <ul>
+            <li><strong>Treaty of Amritsar (1809):</strong> Signed between Maharaja Ranjit Singh and <strong>Charles Metcalfe</strong> (representing the British East India Company). This treaty established the <strong>Sutlej River</strong> as the permanent geopolitical boundary between the Sikh Empire and British expansionist territory.</li>
+            <li><strong>Tripartite Treaty (1838):</strong> Signed among Maharaja Ranjit Singh, Shah Shuja (the exiled Afghan monarch), and the British administration to stabilize the northwestern frontier.</li>
+        </ul>
+        <div class="diagram-box">
+            Treaty of Amritsar (1809) ──> Settled Sutlej River as the Boundary ──> Diverted Expansion Northwest (Multan, Kashmir, Peshawar)
+        </div>
+
+        <h3>Military Modernization and Expansion</h3>
+        <ul>
+            <li><strong>Fauj-i-Khas:</strong> The specialized elite wing of the <strong>Fauj-i-Ain</strong> (regular standing army), trained by European mercenary officers like <strong>Jean-Baptiste Ventura</strong> (Italy) and <strong>Jean-Francois Allard</strong> (France) to match European infantry standards.</li>
+            <li><strong>Key Generals:</strong> <strong>Hari Singh Nalwa</strong> (the legendary frontier commander who fortified the Khyber Pass), Dewan Mokham Chand, and Misr Diwan Chand.</li>
+            <li><strong>Territorial Conquests:</strong> Successfully captured <strong>Multan (1818)</strong>, <strong>Kashmir (1819)</strong>, and <strong>Peshawar (1834)</strong>, expanding the empire's borders right up to the Khyber Pass.</li>
+        </ul>
+
+        <h3>Secular Administration</h3>
+        <p>Ranjit Singh’s government, known as <strong>Sarkar-i-Khalsa</strong>, operated on secular principles. His trusted Prime Minister was <strong>Dhian Singh Dogra</strong>, his Foreign Minister was <strong>Fakir Azizuddin</strong>, and his Finance Minister was <strong>Dewan Dinanath</strong>. He financed the gilding of Harmandir Sahib with gold plate, giving rise to its popular name, the Golden Temple. The Maharaja passed away in 1839, initiating a period of political instability.</p>
+    </div>
+
+    <!-- PAGE 9 -->
+    <div class="page-container">
+        <div class="page-header"><h1>Page 9: Anglo-Sikh Wars & Annexation</h1></div>
+        <h2>Anglo-Sikh Wars & British Annexation</h2>
+        <p>Following the death of Maharaja Ranjit Singh, internal palace intrigues weakened the court, leading to direct military confrontations with the British East India Company.</p>
+
+        <h3>The First Anglo-Sikh War (1845–1846)</h3>
+        <p>The war was marked by internal betrayal from Prime Minister Lal Singh and Army Commander Tej Singh.</p>
+        <ul>
+            <li><strong>Battle of Mudki (1845):</strong> British victory under Sir Hugh Gough.</li>
+            <li><strong>Battle of Ferozeshah (1845):</strong> A hard-fought engagement resulting in heavy casualties on both sides.</li>
+            <li><strong>Battle of Aliwal (1846):</strong> British forces commanded by Sir Harry Smith secured a decisive victory.</li>
+            <li><strong>Battle of Sobraon (1846):</strong> The decisive turning point of the war. <strong>Sardar Sham Singh Attariwala</strong> fought heroically to the end, refusing to surrender despite betrayal from his senior army commanders.</li>
+            <li><strong>Outcome - Treaty of Lahore (1846):</strong> The British placed a resident at the Lahore Durbar. <strong>Maharaja Duleep Singh</strong> (the minor youngest son of Ranjit Singh) was recognized as ruler, and Jammu & Kashmir was carved out and sold to Gulab Singh Dogra under the <em>Treaty of Amritsar (1846)</em>.</li>
+        </ul>
+
+        <h3>The Second Anglo-Sikh War (1848–1849)</h3>
+        <p>Sparked by a localized rebellion in Multan led by Governor <strong>Dewan Mulraj</strong>, the unrest quickly grew into a widespread war for liberation.</p>
+        <ul>
+            <li><strong>Battle of Ramnagar (1848):</strong> A minor cavalry skirmish fought along the Chenab River.</li>
+            <li><strong>Battle of Chillianwala (1849):</strong> A strategic victory for the Sikh forces under Sher Singh Attariwala. This battle resulted in some of the heaviest losses the British army had experienced in the subcontinent, leading to the immediate recall of Commander Hugh Gough.</li>
+            <li><strong>Battle of Gujrat (1849):</strong> Known historically as the <strong>Battle of Guns</strong> because of the heavy artillery duels that decided the outcome. The British won a decisive victory.</li>
+        </ul>
+
+        <h3>The Annexation of Punjab (March 29, 1849)</h3>
+        <ul>
+            <li><strong>The Proclamation:</strong> <strong>Lord Dalhousie</strong>, the Governor-General of India, officially annexed Punjab into the British Empire.</li>
+            <li><strong>Board of Administration:</strong> A three-member administrative board was established to govern the newly formed province, led by <strong>Sir Henry Lawrence</strong> (President), <strong>John Lawrence</strong>, and <strong>Charles Mansel</strong>.</li>
+            <li><strong>Duleep Singh’s Fate:</strong> The young Maharaja was pensioned off and sent to England, and the <strong>Koh-i-Noor diamond</strong> was taken from the treasures of Lahore and presented to Queen Victoria.</li>
+        </ul>
+    </div>
+
+    <!-- PAGE 10 -->
+    <div class="page-container">
+        <div class="page-header"><h1>Page 10: Freedom Struggle & Modern Era</h1></div>
+        <h2>Freedom Movements & Modern Reorganization (1849–1966)</h2>
+        
+        <h3>Socio-Religious and Socio-Political Resistance Movements</h3>
+        <ul>
+            <li><strong>Namdhari / Kuka Movement (1857):</strong> Founded initially by Balak Singh and dynamically expanded by <strong>Baba Ram Singh</strong>. They championed a strict boycott of British goods, British educational institutions, and the state postal network, making it an early pioneer of non-cooperation. In 1872, 66 Kuka activists were executed by being blown from cannons at Malerkotla.</li>
+            <li><strong>Singh Sabha Movement (1873):</strong> Launched in Amritsar to counter the influence of Christian missionary conversions and Westernization. It focused on promoting Punjabi literature and establishing a network of Khalsa schools and colleges.</li>
+            <li><strong>Ghadar Party (1913):</strong> Formed in San Francisco, USA, by expatriate Indian revolutionaries, led by <strong>Lala Hardayal</strong>, <strong>Baba Sohan Singh Bhakna</strong> (the founding President), and Kartar Singh Sarabha. They published the weekly revolutionary newspaper <em>Ghadar</em> to spark an armed uprising against British rule.</li>
+            <li><strong>Jallianwala Bagh Massacre (April 13, 1919):</strong> A peaceful crowd gathered at Jallianwala Bagh on Baisakhi to protest the arrests of Dr. Saifuddin Kitchlew and Dr. Satyapal under the Rowlatt Act. <strong>Brigadier-General Reginald Dyer</strong> ordered troops to open fire on the trapped crowd. <strong>Sardar Udham Singh</strong> later assassinated Michael O'Dwyer (the Lieutenant Governor of Punjab during the massacre) at Caxton Hall, London, in 1940.</li>
+            <li><strong>The Akali Movement / Gurdwara Reform Movement (1920–1925):</strong> A non-violent campaign launched to reclaim control of historic Gurdwaras from corrupt hereditary priests (<em>Mahants</em>). This led directly to the enactment of the landmark <strong>Sikh Gurdwaras Act, 1925</strong>, which established the <strong>Shiromani Gurdwara Parbandhak Committee (SGPC)</strong>.</li>
+        </ul>
+
+        <h3>The Partition and Post-Independence Reorganization</h3>
+        <ul>
+            <li><strong>The Partition (1947):</strong> Sir Cyril Radcliffe drew the border that split Punjab along the line of the Bari Doab. This divided the region into West Punjab (which went to Pakistan) and East Punjab (which remained with India).</li>
+            <li><strong>PEPSU (1948):</strong> The <strong>Patiala and East Punjab States Union</strong> was created by combining eight princely states (Patiala, Nabha, Jind, Faridkot, Kapurthala, Kalsia, Malerkotla, and Nalagarh). Its capital was established at Patiala, and Maharaja Yadavindra Singh served as Rajpramukh. PEPSU was merged into Punjab in 1956.</li>
+            <li><strong>The Punjabi Suba Movement & Reorganization (1966):</strong> Led by <strong>Master Tara Singh</strong> and <strong>Sant Fateh Singh</strong>, the movement campaigned for a state organized around the Punjabi language. Following the recommendations of the <strong>Shah Commission</strong>, the modern state of Punjab was created on <strong>November 1, 1966</strong>. The Hindi-speaking areas were carved out to form Haryana, while the hilly northern districts were transferred to Himachal Pradesh, with Chandigarh established as a shared Union Territory and capital.</li>
+        </ul>
+
+        <div class="highlight-box">
+            <strong>💡 Last-Minute Revision Checklist for PSSSB Excise Exam:</strong><br>
+            1. Ensure you can identify all five <strong>Doabs</strong> and the specific rivers that form their boundaries.<br>
+            2. Memorize the major cities founded by the Sikh Gurus (e.g., Goindwal, Amritsar, Kartarpur, Tarn Taran).<br>
+            3. Review the dates and outcomes of the <strong>Battles of Mudki, Sobraon, and Chillianwala</strong>.<br>
+            4. Double-check the core details of the 12 <strong>Misls</strong> and their founders (especially Sukerchakia, Ahluwalia, and Phulkian).<br>
+            5. Review the post-independence landscape, including the timeline of <strong>PEPSU</strong> and the <strong>1966 Reorganization Act</strong>.
+        </div>
+    </div>
+
+</body>
+</html>
+"""
+
+html_filename = "punjab_history_notes.html"
+pdf_filename = "Punjab_History_10_Page_Master_Companion.pdf"
+
+with open(html_filename, "w", encoding="utf-8") as f:
+    f.write(html_content)
+
+HTML(html_filename).write_pdf(pdf_filename)
+print(f"File generated successfully: {pdf_filename}")
