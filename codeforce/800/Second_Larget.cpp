@@ -9,7 +9,7 @@ int main () {
     };
 
     // Algorithm to find the largest element in the array 
-    int larget = 0;
+    int larget = 0; // THIS IS THE BUG
     for (int i = 0;i<size;i++){
         if(arr[i]>larget){
             larget = arr[i];
@@ -19,7 +19,7 @@ int main () {
 
 
     // Algorithm to find the second largest element in the array
-    int second_larget = 0;
+    int second_larget = 0; // THIS IS THE BUG 
     for (int i = 0;i<size;i++){
         if(arr[i]>second_larget && arr[i]<larget) {
             second_larget = arr[i];
@@ -29,7 +29,7 @@ int main () {
 
 
     // Algo for the third largest 
-    int third = 0;
+    int third = INT_MIN; // This is the fix of the bug 
     for(int i = 0;i<size;i++){
         if(arr[i]>third && arr[i]<second_larget){
             third = arr[i];
