@@ -1,2 +1,1 @@
-s = "node"
-t = "neetcode"
+s="a"
