@@ -1,3 +1,5 @@
+#include <bits/stdc++.h>
+using namespace std;
 class Solution {
 public:
     int countSeniors(vector<string>& details) {
@@ -16,3 +18,7 @@ public:
         return count;
     };
 };
+
+int main () {
+
+}
