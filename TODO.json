@@ -1,17 +1,24 @@
 {
   "todo": [
     {
-      "id": 16273,
-      "text": "Reverse Array, Reverse String, Longest Common Prefix and ",
+      "id": 13490,
+      "text": "Complete the all question of the neetcode for the stack",
       "priority": 1,
-      "created": "2026-06-08T08:23:19.066Z"
-    },
+      "created": "2026-06-17T09:02:01.535Z"
+    }
+  ],
+  "completed": [
     {
       "id": 14824,
       "text": "SOlve the div summation problem",
       "priority": 2,
       "created": "2026-06-08T08:23:21.480Z"
+    },
+    {
+      "id": 16273,
+      "text": "Reverse Array, Reverse String, Longest Common Prefix and ",
+      "priority": 1,
+      "created": "2026-06-08T08:23:19.066Z"
     }
-  ],
-  "completed": []
+  ]
 }
