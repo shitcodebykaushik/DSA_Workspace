@@ -1,1 +1,7 @@
-0
+5 -> 10 -> 20 -> nullptr
+After preppending: 
+1 -> 5 -> 10 -> 20 -> nullptr
+After deleting head: 
+5 -> 10 -> 20 -> nullptr
+After deleting tail: 
+5 -> 10 -> nullptr
