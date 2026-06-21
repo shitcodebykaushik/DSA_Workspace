@@ -10,3 +10,4 @@ The new insertion at the end
 
 The element will be removed now 
 The checking of the peek element 
+2
