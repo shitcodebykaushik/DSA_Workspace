@@ -1,7 +1,12 @@
-5 -> 10 -> 20 -> nullptr
-After preppending: 
-1 -> 5 -> 10 -> 20 -> nullptr
-After deleting head: 
-5 -> 10 -> 20 -> nullptr
-After deleting tail: 
-5 -> 10 -> nullptr
+2 
+3 
+
+The deque operation 
+3 
+
+The new insertion at the end
+3 
+8 
+
+The element will be removed now 
+The checking of the peek element 
