@@ -72,5 +72,5 @@ cout<<"The checking of the peek element "<<endl;
 q1.enque(2);
 q1.enque(3);
 q1.enque(4);
-q1.peek();
+cout<<q1.peek()<<endl;
 };
