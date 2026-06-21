@@ -1,13 +1,2 @@
-2 
-3 
-
-The deque operation 
-3 
-
-The new insertion at the end
-3 
-8 
-
-The element will be removed now 
-The checking of the peek element 
-2
+The factorial of 120
+5 4 3 2 
